@@ -12,3 +12,5 @@ xgboost==1.6.2
 streamlit-lottie==0.0.5
 numpy <2
 pyarrow
+setuptools wheel
+cython
