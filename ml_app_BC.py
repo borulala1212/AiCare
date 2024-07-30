@@ -31,6 +31,13 @@ def get_value(val,my_dict):
 			return value
 
 
+def load_data(file_path):
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"File {file_path} not found.")
+    return pd.read_csv(file_path)
+
+
+
 
 ## Load ML Models 
 @st.cache(allow_output_mutation=True)
