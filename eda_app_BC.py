@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 
 #Load data Eda Pkgs
 import pandas as pd
@@ -17,6 +18,11 @@ import plotly.express as px
 def load_data(BreastCancerWiscosin):
 	df = pd.read_csv(BreastCancerWiscosin)
 	return df
+
+def load_data(file_path):
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"File {file_path} not found.")
+    return pd.read_csv(file_path)
 
 def run_eda_app_BC():
 	st.subheader("Exploratory Data Analysis")
